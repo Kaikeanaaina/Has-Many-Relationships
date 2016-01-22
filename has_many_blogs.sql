@@ -20,4 +20,23 @@ CREATE TABLE users(
 "updated_at" DATATYPE timestamp WITH time zone NOT NULL DEFAULT now()
 );
 
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts(
+"id" DATATYPE serial NOT NULL PRIMARY KEY,
+"title" DATATYPE character varying(180) NULL DEFAULT NULL,
+"url" DATATYPE character varying(510) NULL DEFAULT NULL,
+"content" DATATYPE text NULL DEFAULT NULL,
+"created_at" DATATYPE timestamp WITH time zone NOT NULL DEFAULT now(),
+"updated_at" DATATYPE timestamp WITH time zone NOT NULL DEFAULT now()
+);
+
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE comments(
+"id" DATATYPE serial NOT NULL PRIMARY KEY,
+"book" character varying(510) NULL DEFAULT NULL,
+"created_at" DATATYPE timestamp WITH time zone NOT NULL DEFAULT now(),
+"updated_at" DATATYPE timestamp WITH time zone NOT NULL DEFAULT now(),
+);
 
