@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS posts;
 
 CREATE TABLE posts(
 "id" serial NOT NULL PRIMARY KEY,
+"user_id" integer REFERENCES users(id),
 "title" character varying(180) NULL DEFAULT NULL,
 "url" character varying(510) NULL DEFAULT NULL,
 "content" text NULL DEFAULT NULL,
@@ -35,8 +36,13 @@ DROP TABLE IF EXISTS comments;
 
 CREATE TABLE comments(
 "id" serial NOT NULL PRIMARY KEY,
+"user_id" integer REFERENCES users(id),
+"post_id" integer REFERENCES posts(id),
 "book" character varying(510) NULL DEFAULT NULL,
 "created_at" timestamp WITH time zone NOT NULL DEFAULT now(),
 "updated_at" timestamp WITH time zone NOT NULL DEFAULT now()
 );
+
+--constraints
+
 
