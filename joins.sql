@@ -82,6 +82,6 @@ c.body comment_body
 FROM users u
 INNER JOIN posts p ON p.user_id = u.id
 INNER JOIN comments c ON c.post_id = p.id
-WHERE c.body LIKE '%SSL%' OR '%firewall%' AND p.content LIKE '%nemo%';
+WHERE ((c.body LIKE '%SSL%') OR (c.body LIKE '%firewall%')) AND p.content LIKE '%nemo%';
 
 
