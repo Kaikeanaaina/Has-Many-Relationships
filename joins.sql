@@ -54,8 +54,34 @@
 -- INNER JOIN posts p ON c.post_id = p.id
 -- WHERE c.body LIKE '%USB%';
 
---11
-SELECT p.title post_title, u.first_name, u.last_name, c.body
-FROM posts p
-INNER JOIN users u ON p.user_id = u.id
-INNER JOIN comments c ON c.post_id = p.id;
+-- --11
+-- SELECT p.title post_title, u.first_name, u.last_name, c.body
+-- FROM posts p
+-- INNER JOIN users u ON p.user_id = u.id
+-- INNER JOIN comments c ON c.post_id = p.id
+-- WHERE c.body LIKE '%matrix%';
+
+-- --12
+-- -- SELECT u.first_name, u.last_name, c.body comment_body
+-- SELECT count(*)
+-- FROM comments c
+-- INNER JOIN users u ON c.user_id = u.id
+-- INNER JOIN posts p ON c.post_id = p.id
+-- WHERE c.body LIKE '%SSL%' AND p.content LIKE '%dolorum%';
+
+
+--it wasn't the same number as the read me ***********
+
+--13
+SELECT
+u.first_name post_author_first_name,
+u.last_name post_author_last_name,
+p.title post_title,
+u.username comment_author_username,
+c.body comment_body
+FROM users u
+INNER JOIN posts p ON p.user_id = u.id
+INNER JOIN comments c ON c.post_id = p.id
+WHERE c.body LIKE '%SSL%' OR '%firewall%' AND p.content LIKE '%nemo%';
+
+
