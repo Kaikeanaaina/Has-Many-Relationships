@@ -41,3 +41,15 @@
 -- FROM comments c
 -- INNER JOIN posts p ON c.post_id = p.id
 -- WHERE p.created_at < '2015-01-01';
+
+-- --9
+-- SELECT c.*, p.title post_title, p.url post_url, c.body comment_body
+-- FROM comments c
+-- INNER JOIN posts p ON c.post_id = p.id
+-- WHERE p.created_at > '2015-01-01';
+
+--10
+SELECT c.*, p.title post_title, p.url post_url, c.body comment_body
+FROM comments c
+INNER JOIN posts p ON c.post_id = p.id
+WHERE c.body LIKE '%USB%';
