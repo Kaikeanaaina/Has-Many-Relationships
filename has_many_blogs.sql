@@ -39,7 +39,7 @@ user_id integer REFERENCES users(id)
 
 CREATE TABLE comments(
 id serial NOT NULL PRIMARY KEY,
-book character varying(510) DEFAULT NULL,
+body character varying(510) DEFAULT NULL,
 created_at timestamp WITH time zone NOT NULL DEFAULT now(),
 updated_at timestamp WITH time zone NOT NULL DEFAULT now(),
 user_id integer REFERENCES users(id),
