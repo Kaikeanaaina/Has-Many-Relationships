@@ -31,3 +31,7 @@
 -- INNER JOIN users u ON p.user_id=u.id
 -- WHERE u.created_at > '2015-01-01';
 
+-- --7
+-- SELECT c.*, p.title
+-- FROM comments c
+-- INNER JOIN posts p ON c.post_id = p.id;
