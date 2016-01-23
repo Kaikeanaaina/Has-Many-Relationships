@@ -48,8 +48,14 @@
 -- INNER JOIN posts p ON c.post_id = p.id
 -- WHERE p.created_at > '2015-01-01';
 
---10
-SELECT c.*, p.title post_title, p.url post_url, c.body comment_body
-FROM comments c
-INNER JOIN posts p ON c.post_id = p.id
-WHERE c.body LIKE '%USB%';
+-- --10
+-- SELECT c.*, p.title post_title, p.url post_url, c.body comment_body
+-- FROM comments c
+-- INNER JOIN posts p ON c.post_id = p.id
+-- WHERE c.body LIKE '%USB%';
+
+--11
+SELECT p.title post_title, u.first_name, u.last_name, c.body
+FROM posts p
+INNER JOIN users u ON p.user_id = u.id
+INNER JOIN comments c ON c.post_id = p.id;
